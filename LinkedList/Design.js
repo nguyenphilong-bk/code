@@ -22,7 +22,7 @@ var MyLinkedList = function () {
  */
 MyLinkedList.prototype.get = function (index) {
     if (index < 0 || index >= this.size) return -1;
-    if(index === 0) return this.head.val;
+    if(index === 0) return this.head.val;   
     let temp = this.head;
     while (index > 1) {
         temp = temp.next;
@@ -117,5 +117,7 @@ var obj = new MyLinkedList();
 obj.deleteAtIndex(1);
 obj.addAtHead(5);
 obj.addAtTail(2);
-obj.addAtIndex(1, 6);
+obj.addAtTail(3);
+obj.addAtTail(7);
+// obj.addAtIndex(1, 6);
 console.log(obj);
