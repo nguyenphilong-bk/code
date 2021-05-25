@@ -27,23 +27,22 @@
 //     return left.concat(right);
 // };
 
-// TODO Iterative
-var inorderTraversal = function (root) {
-    let stack = [];
-    let result = []
-    let curr = root;
-    while (curr || stack.length > 0)
-    {
-        while (curr)
-        {
-            stack.push(curr);
-            curr = curr.left;
+    // TODO Iterative
+    const inorderTraversal = root => {
+        let stack = [];
+        let result = [];
+        let curr = root;
+        while (curr || stack.length > 0) {
+            if (curr) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            else {
+                let temp = stack.pop();
+                result.push(temp.val);
+                curr = temp.right;
+            }
         }
-        curr = stack.pop();
-        result.push(curr.val);
-        curr = curr.right;
+        return result;
     }
-    return result;
-}
-
 
