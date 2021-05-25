@@ -1,21 +1,28 @@
-function TreeNode(val, left, right) {
-    this.val = val === undefined ? 0 : val;
-    this.left = left === undefined ? null : left;
-    this.right = right === undefined ? null : right;
-}
+// function TreeNode(val, left, right) {
+//     this.val = val === undefined ? 0 : val;
+//     this.left = left === undefined ? null : left;
+//     this.right = right === undefined ? null : right;
+// }
 
-const preOrderTraversal = (root) => {
-    if (root === null) return [];
-    let left = preOrderTraversal(root.left);
-    let right = preOrderTraversal(root.right);
-    return [root.val].concat(left).concat(right);
+// TODO Recursive
+// const preOrderTraversal = (root) => {
+//     if (root === null) return [];
+//     let left = preOrderTraversal(root.left);
+//     let right = preOrderTraversal(root.right);
+//     return [root.val].concat(left).concat(right);
+// };
+
+// TODO Iterative
+const preorderTraversal = (root) => {
+    let stack = [];
+    let result = [];
+    let curr = root;
+    while (stack.length > 0 || curr) {
+        if (curr) {
+            stack.push(curr);
+            result.push(curr.val);
+            curr = curr.left;
+        } else curr = stack.pop().right;
+    }
+    return result;
 };
-
-let a = new TreeNode(1);
-let b = new TreeNode();
-let c = new TreeNode(2);
-let d = new TreeNode(3);
-a.left = b;
-a.right = c;
-c.left = d;
-console.log(preOrderTraversal(a));
