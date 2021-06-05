@@ -23,7 +23,7 @@
 //     console.log(reverse);
 //     return x === reverse;
 // };
-// TODO too fast @@~
+// TODO much faster than doing with number @@~
 const isPalindrome = (x) => {
     if (x < 0) return false;
     let temp = x.toString();
