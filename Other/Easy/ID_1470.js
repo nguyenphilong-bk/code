@@ -15,4 +15,4 @@ var shuffle = function (nums, n) {
     return result;
 };
 
-console.log(shuffle([2, 5, 1, 3, 4, 7], 3));
+console.log(shuffle([2, 5, 1, 3, 4, 7], 3)); // alo ??????
