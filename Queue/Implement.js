@@ -13,8 +13,7 @@ class Queue {
     isFull() {
         return this.#count === this.#size;
     }
-    get getQueue()
-    {
+    get getQueue() {
         return this.#queue;
     }
     enQueue(num) {
@@ -25,9 +24,8 @@ class Queue {
         }
     }
 
-    rear()
-    {
-        return 
+    rear() {
+        return;
     }
 }
 
