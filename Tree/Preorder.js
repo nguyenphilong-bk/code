@@ -13,7 +13,7 @@
 // };
 
 // TODO Iterative
-const preorderTraversal = (root) => {
+const preOrderTraversal = (root) => {
     let stack = [];
     let result = [];
     let curr = root;
