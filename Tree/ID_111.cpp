@@ -1,5 +1,6 @@
 #include <queue>
 #include <iostream>
+#include <cmath>
 
 struct TreeNode
 {
@@ -14,6 +15,10 @@ struct TreeNode
 class Solution
 {
 public:
+    int minOfTwoElement(int a, int b)
+    {
+        return a > b ? b : a;
+    }
     int minDepth(TreeNode *root)
     {
         if (!root)
@@ -45,12 +50,24 @@ public:
 
         return result;
     }
+
+    int minDepthRec(TreeNode *root)
+    {
+        if (!root)
+            return 0;
+        if (!root->left)
+            return 1 + minDepthRec(root->right);
+        if (!root->right)
+            return 1 + minDepthRec(root->left);
+
+        return 1 + minOfTwoElement(minDepthRec(root->left), minDepthRec(root->right));
+    }
 };
 
 int main()
 {
     Solution aSolution;
     TreeNode *root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
-    int result = aSolution.minDepth(root);
+    int result = aSolution.minDepthRec(root);
     std::cout << result << std::endl;
 }
