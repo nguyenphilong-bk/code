@@ -27,23 +27,9 @@ public:
             return new TreeNode(val);
 
         if (val < root->val)
-        {
-            if (!root->left)
-            {
-                root->left = new TreeNode(val);
-                return root;
-            }
             root->left = insertIntoBST(root->left, val);
-        }
         else
-        {
-            if (!root->right)
-            {
-                root->right = new TreeNode(val);
-                return root;
-            }
             root->right = insertIntoBST(root->right, val);
-        }
 
         return root;
     }
