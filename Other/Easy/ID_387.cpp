@@ -13,6 +13,8 @@ public:
         {
             if (hashMap.count(it))
                 hashMap[it]++;
+            else
+                hashMap[it] = 1;
         }
 
         for (int i = 0; i < str.length(); i++)
