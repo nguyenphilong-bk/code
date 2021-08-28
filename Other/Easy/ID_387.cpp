@@ -5,7 +5,7 @@
 class Solution
 {
 public:
-    int firstUnique(const std::string &str)
+    int firstUniqChar(const std::string &str)
     {
         std::unordered_map<char, int> hashMap;
 
@@ -31,5 +31,5 @@ int main()
 {
     Solution test;
     std::string str = "leetcode";
-    std::cout << test.firstUnique(str);
+    std::cout << test.firstUniqChar(str);
 }
