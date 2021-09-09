@@ -9,21 +9,17 @@ function Node(val, children) {
  * @return {number[]}
  */
 
-const preorderRec = (root, result) => {
+const preorderRecursive = (root, result) => {
     if (!root) return;
 
     result.push(root.val);
 
-    for (const child of root.children) {
-        preorderRec(child, result);
-    }
+    for (const child of root.children) preorderRecursive(child, result);
 
     return;
 };
 
 var preorder = function (root) {
-    if (!root) return [];
-
     const result = new Array();
 
     preorderRec(root, result);
