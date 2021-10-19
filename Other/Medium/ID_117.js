@@ -20,6 +20,7 @@ var connect = function (root) {
 
     while (queue.length > 0) {
         const size = queue.length;
+        
         for (let i = 0; i < size - 1; i++) {
             const temp = queue.shift();
             temp.next = queue[0];
@@ -28,7 +29,7 @@ var connect = function (root) {
             if (temp.right) queue.push(temp.right);
         }
 
-        const lastNode = queue.pop();
+        const lastNode = queue.shift();
         if (lastNode.left) queue.push(lastNode.left);
         if (lastNode.right) queue.push(lastNode.right);
     }
